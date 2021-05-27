@@ -1,0 +1,22 @@
+.jumboCor{
+    background: linear-gradient(324deg, #e29d07 0%, #f7b72d 45%, #e29d07 100%);
+    color: white;
+    padding-top: 70px;
+    padding-bottom: 15px;
+}
+
+#size{
+    width: 450px;
+    height: 380px;
+}
+
+#cardBack2{
+    width: 450px;
+    height: 430px;
+    border: 2px solid #961514;
+}
+
+.cardBorderCorners {
+    border-radius: 25px 25px;
+    width: 18rem;
+  }

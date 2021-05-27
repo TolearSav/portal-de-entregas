@@ -1,1 +1,125 @@
-<p>delivery works!</p>
+<div class="jumbotron jumbotron-fluid jumboCor mb-0">
+  <div class="container">
+    <h1 class="display-4 fontBold d-flex justify-content-center">Entregas</h1>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+    <div class="row ">
+      <div class="col-md-12 mt-3">
+  
+        <h3 class="text-center">Cadastre uma nova entrega</h3>
+  
+        <div class="form-group">
+          <div class="row d-flex justify-content-center mt-3">
+            <div class="col-md-3">
+              <h5>Endereço:</h5>
+              <input [(ngModel)]='delivery.recipient' type="text" class="form-control" id="endereco"
+                placeholder="Digite o endereço">
+            </div>
+          </div>
+  
+          <div class="row d-flex justify-content-center mt-2">
+            <div class="col-md-3">
+              <h5>Taxa:</h5>
+              <input [(ngModel)]='delivery.rate' type="text" class="form-control" id="taxa"
+                placeholder="Digite a taxa">
+            </div>
+          </div>
+  
+          <div class="row d-flex justify-content-center mt-2">
+            <div class="col-md-3">
+              <h5>Status da Entrega:</h5>
+              <input [(ngModel)]='delivery.statusDelivery' type="text" class="form-control" id="status" placeholder="Digite o status da entrega">
+            </div>
+          </div>
+  
+          <div class="row d-flex justify-content-center mt-2">
+            <div class="col-md-3">
+              <h5>Data do Pedido</h5>
+              <input [(ngModel)]='delivery.dateOrder' type="text" class="form-control" id="dateOrder"
+                placeholder="Digite a data do pedido">
+            </div>
+          </div>
+  
+          <div class="row d-flex justify-content-center mt-2">
+            <div class="col-md-3">
+              <h5>Data da Entrega</h5>
+              <input [(ngModel)]='delivery.dateDelivery' type="text" class="form-control" id="dateDelivery"
+                placeholder="Digite a data da entrega">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-center mt-2">
+            <div class="col-md-3">
+              <h5>Ocorrências</h5>
+              <input [(ngModel)]='delivery.occurrences' type="text" class="form-control" id="occurrences"
+                placeholder="Descreva as ocorrências">
+            </div>
+          </div>
+  
+          <div class="row d-flex justify-content-center mt-2 mb-5">
+            <div class="col-md-3">
+              <h5>Cliente</h5>
+              <label for="client">Escolha um cliente ou <a routerLink='/client' data-dismiss="modal">cadastre um novo</a>:
+              </label>
+              <select name="client" id="client" class="form-control" [(ngModel)]='idClient'
+                (change)='findByIdClient()'>
+                <option *ngFor='let item of listClients' value="{{item.id}}">{{item.name}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+  
+        <div class="d-flex justify-content-center mb-4">
+          <button class="btn btn-danger mr-4" routerLink="/home">Cancelar</button>
+          <button class="btn btn-success" (click)='registerDelivery()'>Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+    <div class="container">
+  
+      <div class="row mt-5">
+        <div class="col-md-12">
+          <h3 class="text-center">Todas as entregas</h3>
+        </div>
+      </div>
+  
+      <div class="row mt-3 mb-5 d-flex justify-content-center">
+        <div class="col-md-6">
+  
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">client</th>
+                <th scope="col">Preço</th>
+                <th scope="col" class="text-right">Modificações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let item of listDeliveries'>
+                <th>{{item.recipient/th>
+                <td>R{{item.rate | currency}}</td>
+                <td>{{item.client.email}}</td>
+                <td>R{{item.statusDelivery}}</td>
+                <td>R{{item.dateOrder}}</td>
+                <td>R{{item.dateDelivery}}</td>
+                <td>R{{item.occurrences}}</td>
+                <td class="d-flex justify-content-end">
+                  <button class="btn btn-info" [routerLink]="['/delivery-edit', item.id]">Editar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  
+        </div>
+      </div>
+  
+    </div>
+  </div>

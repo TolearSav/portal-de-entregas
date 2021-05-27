@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Client } from '../model/Client';
+import { Client } from '../model/entities/Client';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,11 @@ export class AuthService {
   ) { }
 
   ClientData(client: Client): Observable<Client> {
-    return this.http.post<Client>('https://foop-delivery-api.herokuapp.com/client', client)
+    return this.http.post<Client>('http://localhost:8080/client', client)
+  }
+
+  getByIdClient(id: number): Observable<Client> {
+    return this.http.get<Client>(`http://localhost:8080/client/${id}`)
   }
 
 }
