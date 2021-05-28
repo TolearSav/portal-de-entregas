@@ -7,12 +7,17 @@
 
 #size{
     width: 450px;
-    height: 380px;
+    height: 410px;
+}
+
+#color {
+    color: #961514;
+    text-decoration: none;
 }
 
 #cardBack2{
     width: 450px;
-    height: 430px;
+    height: 460px;
     border: 2px solid #961514;
 }
 

@@ -56,19 +56,19 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
+                        <th scope="col">Id</th>
                         <th scope="col">Nome</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Telefone</th>
-                        <th scope="col">Id</th>
                         <th scope="col" class="text-right">Modificações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of listClients">
+                        <td>{{item.id}}</td>
                         <td>{{item.name}}</td>
                         <td>{{item.email}}</td>
                         <td>{{item.telephone}}</td>
-                        <td>{{item.id}}</td>
                         <td class="d-flex justify-content-end">
                             <button class="btn btn-danger mr-3"
                                 [routerLink]="['/client-delete', item.id]">Apagar</button>
